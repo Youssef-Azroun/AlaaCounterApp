@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "5082816052",
+    "project_id": "alaa-counter",
+    "storage_bucket": "alaa-counter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5082816052:android:60977bf5e1cbd6d6eef461",
+        "android_client_info": {
+          "package_name": "com.example.alaacounter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsC8UM2fHtDCaAbL5IJNHoT8-2ZFvASdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFunctions">
+
+    <Button
+        android:id="@+id/buttonMonday"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="150dp"
+        android:backgroundTint="#974949"
+        android:text="Monday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonTuesday"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#974949"
+        android:text="Tuesday"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMonday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/buttonWednesday"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#974949"
+        android:text="Wednesday"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTuesday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/buttonThursday"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#974949"
+        android:text="Thursday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonWednesday" />
+
+    <Button
+        android:id="@+id/buttonFriday"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#974949"
+        android:text="Friday"
+        app:layout_constraintTop_toBottomOf="@+id/buttonThursday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/buttonSaturday"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#974949"
+        android:text="Saturday"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFriday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/buttonSunday"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#974949"
+        android:text="Sunday"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSaturday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+    <Button
+        android:id="@+id/Reset"
+        android:layout_width="300dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#0B0000"
+        android:text="End week"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSunday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/7=0"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"/>
+    <Button
+        android:id="@+id/btnAllWeeks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:backgroundTint="#456467"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
