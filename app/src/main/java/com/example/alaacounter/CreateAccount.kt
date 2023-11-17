@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class CreateAccount : AppCompatActivity() {
 
@@ -13,6 +14,8 @@ class CreateAccount : AppCompatActivity() {
     private lateinit var editTextEmail: EditText
     private lateinit var editTextPassword: EditText
     private lateinit var buttonCreateAccount: Button
+    private val firestore = FirebaseFirestore.getInstance()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +34,13 @@ class CreateAccount : AppCompatActivity() {
             val password = editTextPassword.text.toString().trim()
 
             // Create user with email and password using Firebase Authentication
+            // Create user with email and password using Firebase Authentication
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // User creation successful
                         val user = FirebaseAuth.getInstance().currentUser
-                        // Store additional information (name) in Firestore
+                        // Store additional information (name) in Firestore using the user's uid
                         storeUserData(user?.uid, name, email)
                     } else {
                         // If user creation fails, handle the error
@@ -47,12 +51,30 @@ class CreateAccount : AppCompatActivity() {
                         ).show()
                     }
                 }
+
         }
     }
 
     private fun storeUserData(userId: String?, name: String, email: String) {
-        // Add code to store user data in Firestore
+        // Add code to store user data in Firestore using the userId as the document ID
         // Use the 'userId' to identify the user in Firestore
         // This step depends on your Firestore database structure and implementation
+
+        // Example:
+        val documentRef = firestore.collection("Users").document(userId ?: "")
+        val userData = mapOf(
+            "name" to name,
+            "email" to email
+            // Add any other user-related data
+        )
+
+        documentRef.set(userData)
+            .addOnSuccessListener {
+                // Handle success
+            }
+            .addOnFailureListener { e ->
+                // Handle error
+            }
     }
+
 }
