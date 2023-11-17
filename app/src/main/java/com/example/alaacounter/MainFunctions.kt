@@ -50,7 +50,7 @@ class MainFunctions : AppCompatActivity() {
         // Reset button setup
         val resetButton: Button = findViewById(R.id.Reset)
         resetButton.setOnClickListener {
-            val user = auth.currentUser
+            val user = FirebaseAuth.getInstance().currentUser
             user?.let {
                 // Show confirmation dialog before resetting
                 val dialog = AlertDialog.Builder(this, R.style.RedPositiveButtonTheme)
@@ -61,7 +61,7 @@ class MainFunctions : AppCompatActivity() {
                         textViewResult.text = "0/7=0.0"
 
                         // Fetch current document state
-                        val documentRef = firestore.collection("Days").document(user.uid)
+                        val documentRef = firestore.collection("Days").document(user?.uid ?: "")
                         documentRef.get().addOnSuccessListener { documentSnapshot ->
                             val currentDays = documentSnapshot.data?.get("days") as? Map<String, Boolean> ?: emptyMap()
 

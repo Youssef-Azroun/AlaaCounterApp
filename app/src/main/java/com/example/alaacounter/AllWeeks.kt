@@ -27,7 +27,7 @@ class AllWeeks : AppCompatActivity() {
     private fun retrieveWeeklyDataFromFirestore() {
         val user = FirebaseAuth.getInstance().currentUser
         user?.let {
-            val documentRef = firestore.collection("WeeklyData").document(user.uid)
+            val documentRef = firestore.collection("WeeklyData").document(user?.uid ?: "")
             documentRef.get().addOnSuccessListener { documentSnapshot ->
                 val weeklyDataList =
                     documentSnapshot.data?.get("weeklyDataList") as? List<Map<String, Any>> ?: emptyList()
