@@ -38,6 +38,7 @@ class AllWeeks : AppCompatActivity() {
                         weekNumber = (it["weekNumber"] as? Long)?.toInt() ?: 0,
                         greenButtonCount = (it["greenButtonCount"] as? Long)?.toInt() ?: 0,
                         resultText = it["resultText"] as? String ?: ""
+                        // hej
                     )
                 }
 
